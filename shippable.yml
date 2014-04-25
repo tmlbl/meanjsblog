@@ -6,4 +6,5 @@ env:
 services:
   - mongodb
 after_success:
+  - ssh-add ~/.ssh/id_rsa
   - git push git@heroku.com:cryptic-crag-9793.git master

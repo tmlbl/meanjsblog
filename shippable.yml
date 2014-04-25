@@ -6,4 +6,4 @@ env:
 services:
   - mongodb
 after_success:
-  - git push git@heroku.com:shippable-mean.git master
+  - git push git@heroku.com:cryptic-crag-9793.git master

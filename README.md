@@ -6,13 +6,13 @@ If you're just starting out with application development, it is advisable to cre
 
 Prerequisites:
 
-* MongoDB installed
-* Node.js and npm installed
-* Bower installed
-* Grunt and Grunt CLI installed
-* Heroku account and Heroku CLI installed
-* Github account and git installed
-* Shippable account  (of course)
+* [MongoDB installed](http://docs.mongodb.org/manual/installation/)
+* [Node.js and npm installed](http://nodejs.org/download/)
+* [Bower installed](http://bower.io/)
+* [Grunt and Grunt CLI installed](http://gruntjs.com/installing-grunt)
+* [Heroku account and Heroku CLI installed](https://devcenter.heroku.com/articles/heroku-command)
+* [Github account and git installed](https://github.com/)
+* [Shippable account](https://www.shippable.com/)
 
 ## Generating with Yeoman
 
@@ -50,9 +50,9 @@ Since our generated project already comes with a .travis.yml file and a simple t
 
 ## Automatic Deployment to Heroku
 
-To have true continuous integration, we want our project to automatically deploy to our PaaS provider when we trigger a successful build. Mean.js already includes the necessary Procfile and db config settings to deploy to Heroku. First, you must add your Shippable deploy key to your Heroku account. On Shippable.com, click on the settings tab at the top, then click the "Deployment key" tab. Copy the SSH key there onto your clipboard, and navigate to Heroku. Click your account image and select "Account" in the dropdown. Scroll down to "SSH Keys" and paste the key where it says "Add new SSH key...".
+To have true continuous deployment, we want our project to automatically push to our PaaS provider when we trigger a successful build. Mean.js already includes the necessary Procfile and db config settings to deploy to Heroku. First, you must add your Shippable deploy key to your Heroku account. On Shippable.com, click on the settings tab at the top, then click the "Deployment key" tab. Copy the SSH key there onto your clipboard, and navigate to Heroku. Click your account image and select "Account" in the dropdown. Scroll down to "SSH Keys" and paste the key where it says "Add new SSH key...".
 
-Next, create the app on Heroku. On your dashboard, click "Create a new app" and give it a name. Next, click on the app in your dashboard and click "Get add-ons". We're going to add a MongoLab sandbox instance to the app, since the Mean.js config checks for the MongoLab environment variable. Click MongoLab in the add-ons marketplace, and add it to your new app.
+Next, create the app on Heroku. On your dashboard, click "Create a new app" and give it a name. Next, click on the app in your dashboard and click "Get add-ons". We're going to add a MongoHQ sandbox instance to the app, since the Mean.js config checks for the MongoLab environment variable. Click MongoHQ in the add-ons marketplace, and add it to your new app.
 
 Now, we can add the command that will deploy our application to Heroku. First, let's rename .travis.yml to shippable.yml, since that's what we're using.
 
@@ -63,4 +63,11 @@ On Heroku, click on your app in the dashboard and click on the "Settings" tab. C
     after_success:
       - git push <your_git_url> master
 
-Why isn't this working?
+Run your build again on Shippable.com. Your project should successfully deploy to Heroku after building.
+
+## Start Developing
+
+You are now up and running on the MEAN stack with a complete continuous deployment workflow. MEAN is similar to the stack Shippable itself is built on, and it is both powerful and easy to work with. Try making changes to the code and tests and triggering builds to see what all the hype is about. The Mean.js documentation is a great starting point and a valuable resource for navigating the framework.
+
+* [Mean.js documentation](http://meanjs.org/docs.html)
+

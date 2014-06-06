@@ -1,6 +1,8 @@
 language: node_js
 node_js:
   - "0.10"
+minion:
+  type: beshippable/demo
 env:
   - NODE_ENV=travis
 services:
